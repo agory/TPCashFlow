@@ -1,0 +1,11 @@
+#region Propriété privées
+#endregion
+
+#region Accesseu/Mutateur
+#endregion
+
+#region Constructeur init
+#endregion
+
+#region  Méthodes
+#endregion
