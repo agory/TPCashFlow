@@ -14,15 +14,18 @@ namespace presentation
     public partial class FAccueil : Form
     {
         private Projet projet;
+        private Donnees donnees;
+
         public FAccueil()
         {
             InitializeComponent();
             projet = new Projet();
+            donnees = new Donnees();
         }
 
         private void saisieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FSaisie fs = new FSaisie(projet);
+            FSaisie fs = new FSaisie(projet, donnees);
             fs.ShowDialog();
         }
     }
