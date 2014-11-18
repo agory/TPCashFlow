@@ -65,7 +65,17 @@ namespace metier
             this.cf = cf;
             this.tx = tx;
         }
+        public Donnees(int annee) 
+        {
+            this.annee = annee;
+        }
 
+        public void InitData(Double ca, Double cv, Double cf, Double tx) {
+            this.ca = ca;
+            this.cv = cv;
+            this.cf = cf;
+            this.tx = tx;
+        }
         #endregion
 
         #region  Méthodes
