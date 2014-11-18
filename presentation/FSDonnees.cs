@@ -7,23 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using metier;
 
 namespace presentation
 {
-    public partial class FSaisie : Form
+    public partial class FSDonnees : Form
     {
-        private Projet projet;
-        public FSaisie(Projet projet)
+        public FSDonnees()
         {
             InitializeComponent();
-            this.projet = projet;
-            tb_cv.Hide();
-            tb_cf.Hide();
-            tb_ca.Hide();
-
         }
-
-
     }
 }
