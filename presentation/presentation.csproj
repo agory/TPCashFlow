@@ -56,6 +56,12 @@
     <Compile Include="FSaisie.Designer.cs">
       <DependentUpon>FSaisie.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSDonnees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSDonnees.Designer.cs">
+      <DependentUpon>FSDonnees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAccueil.resx">
