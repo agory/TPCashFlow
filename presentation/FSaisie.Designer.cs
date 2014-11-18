@@ -188,6 +188,7 @@
             this.chkB_sameData.Text = "Mêmes valeurs pour les années suivantes";
             this.chkB_sameData.UseVisualStyleBackColor = true;
             // 
+            // 
             // chkB_cf
             // 
             this.chkB_cf.AutoSize = true;

@@ -50,10 +50,25 @@
     <Compile Include="FAccueil.Designer.cs">
       <DependentUpon>FAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSaisie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSaisie.Designer.cs">
+      <DependentUpon>FSaisie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSDonnees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSDonnees.Designer.cs">
+      <DependentUpon>FSDonnees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAccueil.resx">
       <DependentUpon>FAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSaisie.resx">
+      <DependentUpon>FSaisie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

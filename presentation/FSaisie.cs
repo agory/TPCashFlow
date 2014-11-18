@@ -21,7 +21,7 @@ namespace presentation
             tb_cv.Hide();
             tb_cf.Hide();
             tb_ca.Hide();
-            //YOLO
+            //YO
         }
 
 
