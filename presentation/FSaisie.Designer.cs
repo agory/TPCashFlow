@@ -39,13 +39,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_tx = new System.Windows.Forms.TextBox();
             this.tb_cf = new System.Windows.Forms.TextBox();
             this.tb_cv = new System.Windows.Forms.TextBox();
             this.tb_ca = new System.Windows.Forms.TextBox();
-            this.chkB_sameData = new System.Windows.Forms.CheckBox();
+            this.chkB_tx = new System.Windows.Forms.CheckBox();
             this.chkB_cf = new System.Windows.Forms.CheckBox();
             this.chkB_cv = new System.Windows.Forms.CheckBox();
             this.chkB_ca = new System.Windows.Forms.CheckBox();
+            this.bt_valider = new System.Windows.Forms.Button();
+            this.bt_annuler = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +69,7 @@
             this.tb_valeurResiduelle.Name = "tb_valeurResiduelle";
             this.tb_valeurResiduelle.Size = new System.Drawing.Size(100, 20);
             this.tb_valeurResiduelle.TabIndex = 0;
+            this.tb_valeurResiduelle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // tb_investissementP
             // 
@@ -73,6 +77,7 @@
             this.tb_investissementP.Name = "tb_investissementP";
             this.tb_investissementP.Size = new System.Drawing.Size(100, 20);
             this.tb_investissementP.TabIndex = 1;
+            this.tb_investissementP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // tb_investissementM
             // 
@@ -80,6 +85,7 @@
             this.tb_investissementM.Name = "tb_investissementM";
             this.tb_investissementM.Size = new System.Drawing.Size(100, 20);
             this.tb_investissementM.TabIndex = 2;
+            this.tb_investissementM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // tb_annees
             // 
@@ -87,6 +93,7 @@
             this.tb_annees.Name = "tb_annees";
             this.tb_annees.Size = new System.Drawing.Size(100, 20);
             this.tb_annees.TabIndex = 3;
+            this.tb_annees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // groupBox1
             // 
@@ -143,10 +150,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tb_tx);
             this.groupBox2.Controls.Add(this.tb_cf);
             this.groupBox2.Controls.Add(this.tb_cv);
             this.groupBox2.Controls.Add(this.tb_ca);
-            this.groupBox2.Controls.Add(this.chkB_sameData);
+            this.groupBox2.Controls.Add(this.chkB_tx);
             this.groupBox2.Controls.Add(this.chkB_cf);
             this.groupBox2.Controls.Add(this.chkB_cv);
             this.groupBox2.Controls.Add(this.chkB_ca);
@@ -157,12 +165,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Option valeurs annuelles fixes";
             // 
+            // tb_tx
+            // 
+            this.tb_tx.Location = new System.Drawing.Point(283, 121);
+            this.tb_tx.Name = "tb_tx";
+            this.tb_tx.Size = new System.Drawing.Size(100, 20);
+            this.tb_tx.TabIndex = 7;
+            this.tb_tx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            // 
             // tb_cf
             // 
             this.tb_cf.Location = new System.Drawing.Point(283, 89);
             this.tb_cf.Name = "tb_cf";
             this.tb_cf.Size = new System.Drawing.Size(100, 20);
             this.tb_cf.TabIndex = 6;
+            this.tb_cf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // tb_cv
             // 
@@ -170,6 +187,7 @@
             this.tb_cv.Name = "tb_cv";
             this.tb_cv.Size = new System.Drawing.Size(100, 20);
             this.tb_cv.TabIndex = 5;
+            this.tb_cv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
             // tb_ca
             // 
@@ -177,17 +195,18 @@
             this.tb_ca.Name = "tb_ca";
             this.tb_ca.Size = new System.Drawing.Size(100, 20);
             this.tb_ca.TabIndex = 4;
+            this.tb_ca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
             // 
-            // chkB_sameData
+            // chkB_tx
             // 
-            this.chkB_sameData.AutoSize = true;
-            this.chkB_sameData.Location = new System.Drawing.Point(6, 121);
-            this.chkB_sameData.Name = "chkB_sameData";
-            this.chkB_sameData.Size = new System.Drawing.Size(223, 17);
-            this.chkB_sameData.TabIndex = 3;
-            this.chkB_sameData.Text = "Mêmes valeurs pour les années suivantes";
-            this.chkB_sameData.UseVisualStyleBackColor = true;
-            // 
+            this.chkB_tx.AutoSize = true;
+            this.chkB_tx.Location = new System.Drawing.Point(6, 121);
+            this.chkB_tx.Name = "chkB_tx";
+            this.chkB_tx.Size = new System.Drawing.Size(120, 17);
+            this.chkB_tx.TabIndex = 3;
+            this.chkB_tx.Text = "Taux d\'actualisation";
+            this.chkB_tx.UseVisualStyleBackColor = true;
+            this.chkB_tx.CheckedChanged += new System.EventHandler(this.check_tx);
             // 
             // chkB_cf
             // 
@@ -198,6 +217,7 @@
             this.chkB_cf.TabIndex = 2;
             this.chkB_cf.Text = "Charges fixes";
             this.chkB_cf.UseVisualStyleBackColor = true;
+            this.chkB_cf.CheckedChanged += new System.EventHandler(this.check_cf);
             // 
             // chkB_cv
             // 
@@ -208,6 +228,7 @@
             this.chkB_cv.TabIndex = 1;
             this.chkB_cv.Text = "Charges variables";
             this.chkB_cv.UseVisualStyleBackColor = true;
+            this.chkB_cv.CheckedChanged += new System.EventHandler(this.check_cv);
             // 
             // chkB_ca
             // 
@@ -219,12 +240,35 @@
             this.chkB_ca.TabIndex = 0;
             this.chkB_ca.Text = "Chiffres d\'affaires";
             this.chkB_ca.UseVisualStyleBackColor = false;
+            this.chkB_ca.CheckedChanged += new System.EventHandler(this.check_ca);
+            // 
+            // bt_valider
+            // 
+            this.bt_valider.Location = new System.Drawing.Point(299, 408);
+            this.bt_valider.Name = "bt_valider";
+            this.bt_valider.Size = new System.Drawing.Size(100, 23);
+            this.bt_valider.TabIndex = 6;
+            this.bt_valider.Text = "Valider";
+            this.bt_valider.UseVisualStyleBackColor = true;
+            this.bt_valider.Click += new System.EventHandler(this.bt_valider_Click);
+            // 
+            // bt_annuler
+            // 
+            this.bt_annuler.Location = new System.Drawing.Point(71, 408);
+            this.bt_annuler.Name = "bt_annuler";
+            this.bt_annuler.Size = new System.Drawing.Size(100, 23);
+            this.bt_annuler.TabIndex = 7;
+            this.bt_annuler.Text = "Annuler";
+            this.bt_annuler.UseVisualStyleBackColor = true;
+            this.bt_annuler.Click += new System.EventHandler(this.bt_annuler_Click);
             // 
             // FSaisie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 467);
+            this.Controls.Add(this.bt_annuler);
+            this.Controls.Add(this.bt_valider);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -252,12 +296,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox chkB_sameData;
+        private System.Windows.Forms.CheckBox chkB_tx;
         private System.Windows.Forms.CheckBox chkB_cf;
         private System.Windows.Forms.CheckBox chkB_cv;
         private System.Windows.Forms.CheckBox chkB_ca;
         private System.Windows.Forms.TextBox tb_cf;
         private System.Windows.Forms.TextBox tb_cv;
         private System.Windows.Forms.TextBox tb_ca;
+        private System.Windows.Forms.Button bt_valider;
+        private System.Windows.Forms.Button bt_annuler;
+        private System.Windows.Forms.TextBox tb_tx;
     }
 }
