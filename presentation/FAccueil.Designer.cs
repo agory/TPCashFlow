@@ -32,6 +32,7 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saisieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
-            this.saisieToolStripMenuItem});
+            this.saisieToolStripMenuItem,
+            this.affichageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -57,7 +59,7 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // saisieToolStripMenuItem
@@ -66,6 +68,13 @@
             this.saisieToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.saisieToolStripMenuItem.Text = "Saisie";
             this.saisieToolStripMenuItem.Click += new System.EventHandler(this.saisieToolStripMenuItem_Click);
+            // 
+            // affichageToolStripMenuItem
+            // 
+            this.affichageToolStripMenuItem.Name = "affichageToolStripMenuItem";
+            this.affichageToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.affichageToolStripMenuItem.Text = "Affichage";
+            this.affichageToolStripMenuItem.Click += new System.EventHandler(this.affichageToolStripMenuItem_Click);
             // 
             // FAccueil
             // 
@@ -89,5 +98,6 @@
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saisieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
     }
 }

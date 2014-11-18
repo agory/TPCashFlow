@@ -50,6 +50,12 @@
     <Compile Include="FAccueil.Designer.cs">
       <DependentUpon>FAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FAffichage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAffichage.Designer.cs">
+      <DependentUpon>FAffichage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSaisie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAccueil.resx">
       <DependentUpon>FAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAffichage.resx">
+      <DependentUpon>FAffichage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSaisie.resx">
       <DependentUpon>FSaisie.cs</DependentUpon>

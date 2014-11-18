@@ -28,5 +28,11 @@ namespace presentation
             FSaisie fs = new FSaisie(projet, donnees);
             fs.ShowDialog();
         }
+
+        private void affichageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAffichage affichage = new FAffichage(donnees);
+            affichage.ShowDialog();
+        }
     }
 }
