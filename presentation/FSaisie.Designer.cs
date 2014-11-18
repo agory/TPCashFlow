@@ -39,13 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chB_sameData = new System.Windows.Forms.CheckBox();
-            this.chB_cf = new System.Windows.Forms.CheckBox();
-            this.chB_cv = new System.Windows.Forms.CheckBox();
-            this.chB_ca = new System.Windows.Forms.CheckBox();
-            this.tb_ca = new System.Windows.Forms.TextBox();
-            this.tb_cv = new System.Windows.Forms.TextBox();
             this.tb_cf = new System.Windows.Forms.TextBox();
+            this.tb_cv = new System.Windows.Forms.TextBox();
+            this.tb_ca = new System.Windows.Forms.TextBox();
+            this.chkB_sameData = new System.Windows.Forms.CheckBox();
+            this.chkB_cf = new System.Windows.Forms.CheckBox();
+            this.chkB_cv = new System.Windows.Forms.CheckBox();
+            this.chkB_ca = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -146,10 +146,10 @@
             this.groupBox2.Controls.Add(this.tb_cf);
             this.groupBox2.Controls.Add(this.tb_cv);
             this.groupBox2.Controls.Add(this.tb_ca);
-            this.groupBox2.Controls.Add(this.chB_sameData);
-            this.groupBox2.Controls.Add(this.chB_cf);
-            this.groupBox2.Controls.Add(this.chB_cv);
-            this.groupBox2.Controls.Add(this.chB_ca);
+            this.groupBox2.Controls.Add(this.chkB_sameData);
+            this.groupBox2.Controls.Add(this.chkB_cf);
+            this.groupBox2.Controls.Add(this.chkB_cv);
+            this.groupBox2.Controls.Add(this.chkB_ca);
             this.groupBox2.Location = new System.Drawing.Point(16, 227);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(470, 161);
@@ -157,53 +157,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Option valeurs annuelles fixes";
             // 
-            // chB_sameData
+            // tb_cf
             // 
-            this.chB_sameData.AutoSize = true;
-            this.chB_sameData.Location = new System.Drawing.Point(6, 121);
-            this.chB_sameData.Name = "chB_sameData";
-            this.chB_sameData.Size = new System.Drawing.Size(223, 17);
-            this.chB_sameData.TabIndex = 3;
-            this.chB_sameData.Text = "Mêmes valeurs pour les années suivantes";
-            this.chB_sameData.UseVisualStyleBackColor = true;
-            // 
-            // chB_cf
-            // 
-            this.chB_cf.AutoSize = true;
-            this.chB_cf.Location = new System.Drawing.Point(6, 89);
-            this.chB_cf.Name = "chB_cf";
-            this.chB_cf.Size = new System.Drawing.Size(89, 17);
-            this.chB_cf.TabIndex = 2;
-            this.chB_cf.Text = "Charges fixes";
-            this.chB_cf.UseVisualStyleBackColor = true;
-            // 
-            // chB_cv
-            // 
-            this.chB_cv.AutoSize = true;
-            this.chB_cv.Location = new System.Drawing.Point(6, 54);
-            this.chB_cv.Name = "chB_cv";
-            this.chB_cv.Size = new System.Drawing.Size(110, 17);
-            this.chB_cv.TabIndex = 1;
-            this.chB_cv.Text = "Charges variables";
-            this.chB_cv.UseVisualStyleBackColor = true;
-            // 
-            // chB_ca
-            // 
-            this.chB_ca.AutoSize = true;
-            this.chB_ca.BackColor = System.Drawing.SystemColors.Control;
-            this.chB_ca.Location = new System.Drawing.Point(6, 19);
-            this.chB_ca.Name = "chB_ca";
-            this.chB_ca.Size = new System.Drawing.Size(106, 17);
-            this.chB_ca.TabIndex = 0;
-            this.chB_ca.Text = "Chiffres d\'affaires";
-            this.chB_ca.UseVisualStyleBackColor = false;
-            // 
-            // tb_ca
-            // 
-            this.tb_ca.Location = new System.Drawing.Point(283, 19);
-            this.tb_ca.Name = "tb_ca";
-            this.tb_ca.Size = new System.Drawing.Size(100, 20);
-            this.tb_ca.TabIndex = 4;
+            this.tb_cf.Location = new System.Drawing.Point(283, 89);
+            this.tb_cf.Name = "tb_cf";
+            this.tb_cf.Size = new System.Drawing.Size(100, 20);
+            this.tb_cf.TabIndex = 6;
             // 
             // tb_cv
             // 
@@ -212,12 +171,54 @@
             this.tb_cv.Size = new System.Drawing.Size(100, 20);
             this.tb_cv.TabIndex = 5;
             // 
-            // tb_cf
+            // tb_ca
             // 
-            this.tb_cf.Location = new System.Drawing.Point(283, 89);
-            this.tb_cf.Name = "tb_cf";
-            this.tb_cf.Size = new System.Drawing.Size(100, 20);
-            this.tb_cf.TabIndex = 6;
+            this.tb_ca.Location = new System.Drawing.Point(283, 19);
+            this.tb_ca.Name = "tb_ca";
+            this.tb_ca.Size = new System.Drawing.Size(100, 20);
+            this.tb_ca.TabIndex = 4;
+            // 
+            // chkB_sameData
+            // 
+            this.chkB_sameData.AutoSize = true;
+            this.chkB_sameData.Location = new System.Drawing.Point(6, 121);
+            this.chkB_sameData.Name = "chkB_sameData";
+            this.chkB_sameData.Size = new System.Drawing.Size(223, 17);
+            this.chkB_sameData.TabIndex = 3;
+            this.chkB_sameData.Text = "Mêmes valeurs pour les années suivantes";
+            this.chkB_sameData.UseVisualStyleBackColor = true;
+            this.chkB_sameData.Checked = 
+            // 
+            // chkB_cf
+            // 
+            this.chkB_cf.AutoSize = true;
+            this.chkB_cf.Location = new System.Drawing.Point(6, 89);
+            this.chkB_cf.Name = "chkB_cf";
+            this.chkB_cf.Size = new System.Drawing.Size(89, 17);
+            this.chkB_cf.TabIndex = 2;
+            this.chkB_cf.Text = "Charges fixes";
+            this.chkB_cf.UseVisualStyleBackColor = true;
+            // 
+            // chkB_cv
+            // 
+            this.chkB_cv.AutoSize = true;
+            this.chkB_cv.Location = new System.Drawing.Point(6, 54);
+            this.chkB_cv.Name = "chkB_cv";
+            this.chkB_cv.Size = new System.Drawing.Size(110, 17);
+            this.chkB_cv.TabIndex = 1;
+            this.chkB_cv.Text = "Charges variables";
+            this.chkB_cv.UseVisualStyleBackColor = true;
+            // 
+            // chkB_ca
+            // 
+            this.chkB_ca.AutoSize = true;
+            this.chkB_ca.BackColor = System.Drawing.SystemColors.Control;
+            this.chkB_ca.Location = new System.Drawing.Point(6, 19);
+            this.chkB_ca.Name = "chkB_ca";
+            this.chkB_ca.Size = new System.Drawing.Size(106, 17);
+            this.chkB_ca.TabIndex = 0;
+            this.chkB_ca.Text = "Chiffres d\'affaires";
+            this.chkB_ca.UseVisualStyleBackColor = false;
             // 
             // FSaisie
             // 
@@ -251,10 +252,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox chB_sameData;
-        private System.Windows.Forms.CheckBox chB_cf;
-        private System.Windows.Forms.CheckBox chB_cv;
-        private System.Windows.Forms.CheckBox chB_ca;
+        private System.Windows.Forms.CheckBox chkB_sameData;
+        private System.Windows.Forms.CheckBox chkB_cf;
+        private System.Windows.Forms.CheckBox chkB_cv;
+        private System.Windows.Forms.CheckBox chkB_ca;
         private System.Windows.Forms.TextBox tb_cf;
         private System.Windows.Forms.TextBox tb_cv;
         private System.Windows.Forms.TextBox tb_ca;
