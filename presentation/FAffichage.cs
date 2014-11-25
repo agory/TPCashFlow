@@ -13,13 +13,25 @@ namespace presentation
 {
     public partial class FAffichage : Form
     {
-        private Donnees donnees;
+        private Projet projet;
 
-        public FAffichage(Donnees donnees)
+        public FAffichage(Projet projet)
         {
             InitializeComponent();
-            this.donnees = donnees;
+            this.projet = projet;
             Load();
+            LoadActualise();
+        }
+
+        public void LoadActualise()
+        {
+            List<String> nomsHeaderCell = new List<String>();
+            nomsHeaderCell.Add("Origine");
+            nomsHeaderCell.Add("Taux d'actualisation");
+            nomsHeaderCell.Add("Actaulisé");
+            nomsHeaderCell.Add("");
+            nomsHeaderCell.Add("VAN");
+            CreerDgv(nomsHeaderCell);
         }
 
         public void Load()
@@ -50,7 +62,7 @@ namespace presentation
             //Commenter le code, ajouter les try/catch
             try
             {
-                donnees.Annee = 6;
+                //projet.Donnees.Count = 6;
                 dgv.RowHeadersWidth += 160;
                 dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
                 dgv.RowCount = name.Count; ;
