@@ -70,6 +70,7 @@
             this.tb_valeurResiduelle.Size = new System.Drawing.Size(100, 20);
             this.tb_valeurResiduelle.TabIndex = 0;
             this.tb_valeurResiduelle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_valeurResiduelle.Validated += new System.EventHandler(this.tb_valeurResiduelle_Validated);
             // 
             // tb_investissementP
             // 
@@ -78,6 +79,7 @@
             this.tb_investissementP.Size = new System.Drawing.Size(100, 20);
             this.tb_investissementP.TabIndex = 1;
             this.tb_investissementP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_investissementP.Validated += new System.EventHandler(this.tb_investissementP_Validated);
             // 
             // tb_investissementM
             // 
@@ -86,6 +88,7 @@
             this.tb_investissementM.Size = new System.Drawing.Size(100, 20);
             this.tb_investissementM.TabIndex = 2;
             this.tb_investissementM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_investissementM.Validated += new System.EventHandler(this.tb_investissementM_Validated);
             // 
             // tb_annees
             // 
@@ -94,6 +97,7 @@
             this.tb_annees.Size = new System.Drawing.Size(100, 20);
             this.tb_annees.TabIndex = 3;
             this.tb_annees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_annees.Validated += new System.EventHandler(this.tb_annees_Validated);
             // 
             // groupBox1
             // 
@@ -172,6 +176,7 @@
             this.tb_tx.Size = new System.Drawing.Size(100, 20);
             this.tb_tx.TabIndex = 7;
             this.tb_tx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_tx.Validated += new System.EventHandler(this.tb_tx_Validated);
             // 
             // tb_cf
             // 
@@ -180,6 +185,7 @@
             this.tb_cf.Size = new System.Drawing.Size(100, 20);
             this.tb_cf.TabIndex = 6;
             this.tb_cf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_cf.Validated += new System.EventHandler(this.tb_cf_Validated);
             // 
             // tb_cv
             // 
@@ -188,6 +194,7 @@
             this.tb_cv.Size = new System.Drawing.Size(100, 20);
             this.tb_cv.TabIndex = 5;
             this.tb_cv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_cv.Validated += new System.EventHandler(this.tb_cv_Validated);
             // 
             // tb_ca
             // 
@@ -196,6 +203,7 @@
             this.tb_ca.Size = new System.Drawing.Size(100, 20);
             this.tb_ca.TabIndex = 4;
             this.tb_ca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.generalKeyPress);
+            this.tb_ca.Validated += new System.EventHandler(this.tb_ca_Validated);
             // 
             // chkB_tx
             // 
@@ -207,6 +215,7 @@
             this.chkB_tx.Text = "Taux d\'actualisation";
             this.chkB_tx.UseVisualStyleBackColor = true;
             this.chkB_tx.CheckedChanged += new System.EventHandler(this.check_tx);
+            this.chkB_tx.Validated += new System.EventHandler(this.checkAll);
             // 
             // chkB_cf
             // 
@@ -218,6 +227,7 @@
             this.chkB_cf.Text = "Charges fixes";
             this.chkB_cf.UseVisualStyleBackColor = true;
             this.chkB_cf.CheckedChanged += new System.EventHandler(this.check_cf);
+            this.chkB_cf.Validated += new System.EventHandler(this.checkAll);
             // 
             // chkB_cv
             // 
@@ -229,6 +239,7 @@
             this.chkB_cv.Text = "Charges variables";
             this.chkB_cv.UseVisualStyleBackColor = true;
             this.chkB_cv.CheckedChanged += new System.EventHandler(this.check_cv);
+            this.chkB_cv.Validated += new System.EventHandler(this.checkAll);
             // 
             // chkB_ca
             // 
@@ -241,6 +252,7 @@
             this.chkB_ca.Text = "Chiffres d\'affaires";
             this.chkB_ca.UseVisualStyleBackColor = false;
             this.chkB_ca.CheckedChanged += new System.EventHandler(this.check_ca);
+            this.chkB_ca.Validated += new System.EventHandler(this.checkAll);
             // 
             // bt_valider
             // 
@@ -248,7 +260,7 @@
             this.bt_valider.Name = "bt_valider";
             this.bt_valider.Size = new System.Drawing.Size(100, 23);
             this.bt_valider.TabIndex = 6;
-            this.bt_valider.Text = "Valider";
+            this.bt_valider.Text = "Suivant";
             this.bt_valider.UseVisualStyleBackColor = true;
             this.bt_valider.Click += new System.EventHandler(this.bt_valider_Click);
             // 
