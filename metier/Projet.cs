@@ -14,6 +14,12 @@ namespace metier
         private Double investissementM;
         private Double valeurResiduelle;
         private List<Donnees> donnees;
+
+        public List<Donnees> Donnees
+        {
+            get { return donnees; }
+            set { donnees = value; }
+        }
         
         #endregion
 
