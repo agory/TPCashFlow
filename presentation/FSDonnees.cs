@@ -66,7 +66,7 @@ namespace presentation
             return modif;
         }
 
-        private void tb_ca_TextChanged(object sender, EventArgs e)
+        private void tb_ca_Validated(object sender, EventArgs e)
         {
             if (tb_ca.Text != "")
             {
@@ -85,26 +85,26 @@ namespace presentation
             }
         }
 
-        private void tb_tx_TextChanged(object sender, EventArgs e)
+        private void tb_cv_Validated(object sender, EventArgs e)
         {
-            if (tb_tx.Text != "")
+            if (tb_cv.Text != "")
             {
                 double temp;
                 try
                 {
-                    temp = Convert.ToDouble(virgule(tb_tx.Text));
-                    tb_tx.Text = temp.ToString("0.00");
-                    tb_tx.ForeColor = Color.Black;
+                    temp = Convert.ToDouble(virgule(tb_cv.Text));
+                    tb_cv.Text = temp.ToString("0.00");
+                    tb_cv.ForeColor = Color.Black;
 
                 }
                 catch (Exception)
                 {
-                    tb_tx.ForeColor = Color.Red;
+                    tb_cv.ForeColor = Color.Red;
                 }
             }
         }
 
-        private void tb_cf_TextChanged(object sender, EventArgs e)
+        private void tb_cf_Validated(object sender, EventArgs e)
         {
             if (tb_cf.Text != "")
             {
@@ -123,23 +123,25 @@ namespace presentation
             }
         }
 
-        private void tb_cv_TextChanged(object sender, EventArgs e)
+        private void tb_tx_Validated(object sender, EventArgs e)
         {
-            if (tb_cv.Text != "")
+            if (tb_tx.Text != "")
             {
                 double temp;
                 try
                 {
-                    temp = Convert.ToDouble(virgule(tb_cv.Text));
-                    tb_cv.Text = temp.ToString("0.00");
-                    tb_cv.ForeColor = Color.Black;
+                    temp = Convert.ToDouble(virgule(tb_tx.Text));
+                    tb_tx.Text = temp.ToString("0.00");
+                    tb_tx.ForeColor = Color.Black;
 
                 }
                 catch (Exception)
                 {
-                    tb_cv.ForeColor = Color.Red;
+                    tb_tx.ForeColor = Color.Red;
                 }
             }
         }
+
+
     }
 }

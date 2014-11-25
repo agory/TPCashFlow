@@ -11,10 +11,11 @@ using metier;
 
 namespace presentation
 {
+
     public partial class FSaisie : Form
     {
         private Projet projet;
-        public FSaisie(Projet projet, Donnees donnees)
+        public FSaisie(Projet projet)
         {
             InitializeComponent();
             this.projet = projet;
@@ -26,7 +27,15 @@ namespace presentation
 
         private void bt_valider_Click(object sender, EventArgs e)
         {
+            if (tb_investissementM.Text != "" && tb_investissementP.Text != ""
+                && tb_annees.Text != "" && tb_valeurResiduelle.Text != "")
+            {
+                //projet.Init();
+                if (chkB_cv.Checked == true && chkB_ca.Checked == true && chkB_cf.Checked == true && chkB_tx.Checked == true)
+                {
 
+                }
+            }
         }
 
 
@@ -102,6 +111,179 @@ namespace presentation
             chkB_ca.Checked = false;
             chkB_cf.Checked = false;
             chkB_tx.Checked = false;
+        }
+
+        private void checkAll(object sender, EventArgs e)
+        {
+            if (chkB_cv.Checked == true && chkB_ca.Checked == true && chkB_cf.Checked == true && chkB_tx.Checked == true)
+            {
+                bt_valider.Text = "Valider";
+            }
+        }
+        private string virgule(string nombre)
+        {
+            string modif = "";
+            for (int i = 0; i < nombre.Length; i++)
+            {
+                if (nombre[i] == '.')
+                {
+                    modif += ',';
+                }
+                else
+                {
+                    modif += nombre[i];
+                }
+            }
+            return modif;
+        }
+
+        private void tb_investissementP_Validated(object sender, EventArgs e)
+        {
+            double temp;
+            try
+            {
+                temp = Convert.ToDouble(virgule(tb_investissementP.Text));
+                tb_investissementP.Text = temp.ToString("0.00");
+                tb_investissementP.ForeColor = Color.Black;
+
+            }
+            catch (Exception)
+            {
+                tb_investissementP.ForeColor = Color.Red;
+            }
+        }
+
+        private void tb_ca_Validated(object sender, EventArgs e)
+        {
+            if (tb_ca.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_ca.Text));
+                    tb_ca.Text = temp.ToString("0.00");
+                    tb_ca.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_ca.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_cv_Validated(object sender, EventArgs e)
+        {
+            if (tb_cv.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_cv.Text));
+                    tb_cv.Text = temp.ToString("0.00");
+                    tb_cv.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_cv.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_cf_Validated(object sender, EventArgs e)
+        {
+            if (tb_cf.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_cf.Text));
+                    tb_cf.Text = temp.ToString("0.00");
+                    tb_cf.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_cf.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_tx_Validated(object sender, EventArgs e)
+        {
+            if (tb_tx.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_tx.Text));
+                    tb_tx.Text = temp.ToString("0.00");
+                    tb_tx.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_tx.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_investissementM_Validated(object sender, EventArgs e)
+        {
+            if (tb_investissementM.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_investissementM.Text));
+                    tb_investissementM.Text = temp.ToString("0.00");
+                    tb_investissementM.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_investissementM.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_annees_Validated(object sender, EventArgs e)
+        {
+            if (tb_annees.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_annees.Text));
+                    tb_annees.Text = temp.ToString("0.00");
+                    tb_annees.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_annees.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void tb_valeurResiduelle_Validated(object sender, EventArgs e)
+        {
+            if (tb_valeurResiduelle.Text != "")
+            {
+                double temp;
+                try
+                {
+                    temp = Convert.ToDouble(virgule(tb_valeurResiduelle.Text));
+                    tb_valeurResiduelle.Text = temp.ToString("0.00");
+                    tb_valeurResiduelle.ForeColor = Color.Black;
+
+                }
+                catch (Exception)
+                {
+                    tb_valeurResiduelle.ForeColor = Color.Red;
+                }
+            }
         }
     }
 }

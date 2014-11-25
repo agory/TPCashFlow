@@ -58,8 +58,8 @@
             this.tb_tx.Name = "tb_tx";
             this.tb_tx.Size = new System.Drawing.Size(176, 20);
             this.tb_tx.TabIndex = 1;
-            this.tb_tx.TextChanged += new System.EventHandler(this.tb_tx_TextChanged);
             this.tb_tx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_interdictionSaisie);
+            this.tb_tx.Validated += new System.EventHandler(this.tb_tx_Validated);
             // 
             // tb_cf
             // 
@@ -67,8 +67,8 @@
             this.tb_cf.Name = "tb_cf";
             this.tb_cf.Size = new System.Drawing.Size(176, 20);
             this.tb_cf.TabIndex = 1;
-            this.tb_cf.TextChanged += new System.EventHandler(this.tb_cf_TextChanged);
             this.tb_cf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_interdictionSaisie);
+            this.tb_cf.Validated += new System.EventHandler(this.tb_cf_Validated);
             // 
             // label1
             // 
@@ -112,8 +112,8 @@
             this.tb_ca.Name = "tb_ca";
             this.tb_ca.Size = new System.Drawing.Size(176, 20);
             this.tb_ca.TabIndex = 1;
-            this.tb_ca.TextChanged += new System.EventHandler(this.tb_ca_TextChanged);
             this.tb_ca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_interdictionSaisie);
+            this.tb_ca.Validated += new System.EventHandler(this.tb_ca_Validated);
             // 
             // tb_cv
             // 
@@ -121,8 +121,8 @@
             this.tb_cv.Name = "tb_cv";
             this.tb_cv.Size = new System.Drawing.Size(176, 20);
             this.tb_cv.TabIndex = 1;
-            this.tb_cv.TextChanged += new System.EventHandler(this.tb_cv_TextChanged);
             this.tb_cv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_interdictionSaisie);
+            this.tb_cv.Validated += new System.EventHandler(this.tb_cv_Validated);
             // 
             // bt_valider
             // 
