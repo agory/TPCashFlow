@@ -30,12 +30,71 @@ namespace presentation
             if (tb_investissementM.Text != "" && tb_investissementP.Text != ""
                 && tb_annees.Text != "" && tb_valeurResiduelle.Text != "")
             {
-                //projet.Init();
-                if (chkB_cv.Checked == true && chkB_ca.Checked == true && chkB_cf.Checked == true && chkB_tx.Checked == true)
+
+                try
                 {
+                    double investissementM = Convert.ToDouble(virgule(tb_investissementM.Text));
+                    double investissementP = Convert.ToDouble(virgule(tb_investissementP.Text));
+                    int annees = Convert.ToInt16(virgule(tb_annees.Text));
+                    double valeurResiduel = Convert.ToDouble(virgule(tb_valeurResiduelle.Text));
+   
+                    List<Donnees> listDonnees = new List<Donnees>();
+                    Donnees donnees = new Donnees();
+
+
+                    bool testSaisie = true;
+                    if (tb_ca.Text != "" && chkB_ca.Checked == true)
+                    {
+                        donnees.Ca = Convert.ToDouble(virgule(tb_ca.Text));
+                    }
+                    else
+                        testSaisie = false;
+                    if (tb_cf.Text != "" && chkB_cf.Checked == true)
+                    {
+                        donnees.Cf = Convert.ToDouble(virgule(tb_cf.Text));
+                    }
+                    else
+                        testSaisie = false;
+                    if (tb_tx.Text != "" && chkB_tx.Checked == true)
+                    {
+                        donnees.Tx = Convert.ToDouble(virgule(tb_tx.Text));
+                    }
+                    else
+                        testSaisie = false;
+                    if (tb_cv.Text != "" && chkB_cv.Checked == true)
+                    {
+                        donnees.Cv = Convert.ToDouble(virgule(tb_cv.Text));
+                    }
+                    else
+                        testSaisie = false;
+
+                    if (testSaisie)
+                    {
+                        for (int i = 1; i <= annees; i++)
+                        {
+                            donnees.Annee = i;
+                            listDonnees.Add(donnees);
+                        }
+                        
+                    }
+                    else
+                    {
+                        donnees.Annee = annees;
+                        FSDonnees Fsd = new FSDonnees(donnees, listDonnees);
+                        Fsd.Show();
+                    }
+                    projet.Init(investissementP, investissementM, valeurResiduel, listDonnees);
+
 
                 }
+                catch (Exception err)
+                {
+                    lab_err.Text = err.Message;
+                }
+
             }
+            else
+                lab_err.Text = "Des information n'ont pas été saisie";
         }
 
 
@@ -252,11 +311,11 @@ namespace presentation
         {
             if (tb_annees.Text != "")
             {
-                double temp;
+                int temp;
                 try
                 {
-                    temp = Convert.ToDouble(virgule(tb_annees.Text));
-                    tb_annees.Text = temp.ToString("0.00");
+                    temp = Convert.ToInt16(virgule(tb_annees.Text));
+                    tb_annees.Text = temp.ToString();
                     tb_annees.ForeColor = Color.Black;
 
                 }

@@ -61,6 +61,13 @@ namespace metier
             this.valeurResiduelle = valeurResiduelle;
             this.donnees = new List<Donnees>();
         }
+        public void Init(Double investissementP, Double investissementM, Double valeurResiduelle, List<Donnees> lDonnees)
+        {
+            this.investissementP = investissementP;
+            this.investissementM = investissementM;
+            this.valeurResiduelle = valeurResiduelle;
+            this.donnees = lDonnees;
+        }
 
         #endregion
 
