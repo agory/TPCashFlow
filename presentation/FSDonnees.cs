@@ -14,30 +14,94 @@ namespace presentation
     public partial class FSDonnees : Form
     {
         private Donnees donnees;
-        public FSDonnees(Donnees d)
+        private List<Donnees> listDonnees;
+        
+        private int annees;
+        public FSDonnees(Donnees d, List<Donnees> l)
         {
             InitializeComponent();
             donnees = d;
-            lab_title.Text += donnees.Annee;
+            listDonnees = l;
+            annees = 1;
+            initialiseTb();
+            
         }
 
+        private void initialiseTb()
+        {
+            lab_title.Text = "Saisie informations année : " + annees;
+            if (donnees.Ca > 0) { 
+                tb_ca.Text = donnees.Ca.ToString("0.00");
+                tb_ca.Enabled = false;
+            }
+            else {
+                tb_ca.Text = "";
+                tb_ca.Enabled = true;
+            }
+
+            if (donnees.Cf > 0)
+            {
+                tb_cf.Text = donnees.Cf.ToString("0.00");
+                tb_cf.Enabled = false;
+            }
+            else
+            {
+                tb_cf.Text = "";
+                tb_cf.Enabled = true;
+            }
+
+            if (donnees.Tx > 0)
+            {
+                tb_tx.Text = donnees.Tx.ToString("0.00");
+                tb_tx.Enabled = false;
+            }
+            else
+            {
+                tb_tx.Text = "";
+                tb_tx.Enabled = true;
+            } 
+            
+            if (donnees.Cv > 0)
+            {
+                tb_cv.Text = donnees.Cv.ToString("0.00");
+                tb_cv.Enabled = false;
+            }
+            else
+            {
+                tb_cv.Text = "";
+                tb_cv.Enabled = true;
+            }
+        }
         private void bt_valider_Click(object sender, EventArgs e)
         {
-            if (tb_ca.Text != "" && tb_tx.Text != "" && tb_cv.Text != "" && tb_cf.Text != "") 
+            Donnees uneDonnees = new Donnees(annees);
+            if (tb_ca.Text != "" && tb_tx.Text != "" && tb_cv.Text != "" && tb_cf.Text != "")
             {
                 try
                 {
                     double ca = Convert.ToDouble(virgule(tb_ca.Text));
-                    double tx = Convert.ToDouble(virgule(tb_tx.Text));
+                    double tx = Convert.ToDouble(virgule(tb_tx.Text))/100.0;
                     double cv = Convert.ToDouble(virgule(tb_cv.Text));
                     double cf = Convert.ToDouble(virgule(tb_cf.Text));
-                    donnees.InitData(ca, tx, cv, cf);
+                    uneDonnees.InitData(ca, tx, cv, cf);
+                    annees++;
+                    listDonnees.Add(uneDonnees);
+                    if (annees <= donnees.Annee)
+                    {
+                        initialiseTb();
+                    }
+                    else
+                        Close();
                 }
                 catch (Exception)
                 {
                     lab_err.Text = "Erreur de saisie";
                 }
-                
+
+            }
+            else
+            {
+                lab_err.Text = "Des éléments n'ont pas été saisie";
             }
         }
 

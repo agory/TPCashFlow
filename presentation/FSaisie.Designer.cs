@@ -49,6 +49,7 @@
             this.chkB_ca = new System.Windows.Forms.CheckBox();
             this.bt_valider = new System.Windows.Forms.Button();
             this.bt_annuler = new System.Windows.Forms.Button();
+            this.lab_err = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -274,11 +275,21 @@
             this.bt_annuler.UseVisualStyleBackColor = true;
             this.bt_annuler.Click += new System.EventHandler(this.bt_annuler_Click);
             // 
+            // lab_err
+            // 
+            this.lab_err.AutoSize = true;
+            this.lab_err.ForeColor = System.Drawing.Color.Red;
+            this.lab_err.Location = new System.Drawing.Point(12, 445);
+            this.lab_err.Name = "lab_err";
+            this.lab_err.Size = new System.Drawing.Size(0, 13);
+            this.lab_err.TabIndex = 8;
+            // 
             // FSaisie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 467);
+            this.Controls.Add(this.lab_err);
             this.Controls.Add(this.bt_annuler);
             this.Controls.Add(this.bt_valider);
             this.Controls.Add(this.groupBox2);
@@ -318,5 +329,6 @@
         private System.Windows.Forms.Button bt_valider;
         private System.Windows.Forms.Button bt_annuler;
         private System.Windows.Forms.TextBox tb_tx;
+        private System.Windows.Forms.Label lab_err;
     }
 }

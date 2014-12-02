@@ -38,7 +38,7 @@
             this.tb_ca = new System.Windows.Forms.TextBox();
             this.tb_cv = new System.Windows.Forms.TextBox();
             this.bt_valider = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lab_err2 = new System.Windows.Forms.Label();
             this.lab_err = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -84,9 +84,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(218, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Taux d\'actualisation";
+            this.label2.Text = "Taux d\'actualisation en %";
             // 
             // label3
             // 
@@ -134,14 +134,14 @@
             this.bt_valider.UseVisualStyleBackColor = true;
             this.bt_valider.Click += new System.EventHandler(this.bt_valider_Click);
             // 
-            // label5
+            // lab_err2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.lab_err2.AutoSize = true;
+            this.lab_err2.ForeColor = System.Drawing.Color.Red;
+            this.lab_err2.Location = new System.Drawing.Point(9, 136);
+            this.lab_err2.Name = "lab_err2";
+            this.lab_err2.Size = new System.Drawing.Size(0, 13);
+            this.lab_err2.TabIndex = 4;
             // 
             // lab_err
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 158);
             this.Controls.Add(this.lab_err);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lab_err2);
             this.Controls.Add(this.bt_valider);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -188,7 +188,7 @@
         private System.Windows.Forms.TextBox tb_ca;
         private System.Windows.Forms.TextBox tb_cv;
         private System.Windows.Forms.Button bt_valider;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lab_err2;
         private System.Windows.Forms.Label lab_err;
     }
 }
