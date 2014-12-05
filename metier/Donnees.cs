@@ -80,6 +80,20 @@ namespace metier
 
         #region  Méthodes
 
+        public Double chargesAnnuelles()
+        {
+            return Cf + Cv;
+        }
+
+        public Double caAvtIS()
+        {
+            return Ca - (Cv + Cf);
+        }
+
+        public Double mtIS()
+        {
+            return (Ca - Cv + Cf)/3;
+        }
         #endregion
     }
 }

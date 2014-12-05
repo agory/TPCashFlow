@@ -79,6 +79,10 @@ namespace metier
             this.donnees.Add(donnee);
         }
 
+        public Double amortissement()
+        {
+            return (investissementM - valeurResiduelle) / donnees.Count;
+        }
         #endregion
     }
 }

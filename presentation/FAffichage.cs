@@ -52,7 +52,6 @@ namespace presentation
             {
                 nomsHeaderCell.Add("Année "+i);
             }
-           
             List<String> columnsHeaderCell = new List<String>();
             columnsHeaderCell.Add("C.A");
             columnsHeaderCell.Add("C.V");
@@ -81,7 +80,7 @@ namespace presentation
             //Commenter le code, ajouter les try/catch
             try
             {
-                if (column.Count == 5)
+                if (column.Count < 6)
                 {
                     dgv_actualise.RowHeadersWidth += 160;
                     dgv_actualise.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -95,7 +94,7 @@ namespace presentation
 
                     for (int i = 0; i < dgv_actualise.ColumnCount; i++)
                     {
-                        dgv_actualise.Columns[i].HeaderCell.Value =column [i];
+                        dgv_actualise.Columns[i].HeaderCell.Value =column[i];
                     }
                     RemplirDgvActualise(dgv_actualise);
                 }
@@ -103,8 +102,7 @@ namespace presentation
                 {
                     dgv.RowHeadersWidth += 160;
                     dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-                    dgv.RowCount = name.Count;
-                    dgv.ColumnCount = projet.Donnees.Count;
+                    dgv.ColumnCount = column.Count;
 
                     for (int i = 0; i < dgv.RowCount; i++)
                     {
@@ -154,37 +152,34 @@ namespace presentation
                             break;
                         ////Cellule correspondant à l'amortissement
                         case 3:
-                            dgv.Rows[i].Cells[j].Value = donnees[i].Cf.ToString("00.00");
+                            dgv.Rows[i].Cells[j].Value = projet.amortissement().ToString("00.00");
                             break;
                         //Cellule correspondant au charges annuelles
                         case 4:
-                            Double chargesAnnuelles = donnees[i].Cf + donnees[i].Cv;
-                            dgv.Rows[i].Cells[j].Value = chargesAnnuelles.ToString("00.00");
+                            dgv.Rows[i].Cells[j].Value = donnees[i].chargesAnnuelles().ToString("00.00");
                             break;
 
                         //Cellule correspondant au chiffre d'affaires avant IS
                         case 5:
-                            Double CAavtIS = donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf);
-                            dgv.Rows[i].Cells[j].Value = CAavtIS.ToString("00.00");
+                            dgv.Rows[i].Cells[j].Value = donnees[i].caAvtIS().ToString("00.00");
                             break;
                         //Cellule correspondant au montant IS
                         case 6:
-                            Double mtIS = donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf) * (1 / 3);
-                            dgv.Rows[i].Cells[j].Value = donnees[i].Cf.ToString("00.00");
+                            dgv.Rows[i].Cells[j].Value = donnees[i].mtIS().ToString("00.00");
                             break;
                         //Cellule vide
                         case 7:
                             break;
                         //Cellule correspondant à la valeur résiduelle
                         case 8:
-                            if (i == projet.Donnees.Count)
+                            if (i == (projet.Donnees.Count-1))
                             {
-                                dgv.Rows[i].Cells[j].Value = projet.ValeurResiduelle;
+                                dgv.Rows[i].Cells[j].Value = projet.ValeurResiduelle.ToString("00.00");
                             }
                             break;
+                        //Celllule correspondant au CashFlow
                         case 9:
-                            Double CAavtIS2 = donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf);
-                            dgv.Rows[i].Cells[j].Value = 9000 + CAavtIS2;
+                            dgv.Rows[i].Cells[j].Value = projet.amortissement() - donnees[i].caAvtIS() - donnees[i].mtIS();
                             break;
                         default:
                             break;
