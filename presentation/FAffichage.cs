@@ -46,9 +46,9 @@ namespace presentation
         {
             List<String> nomsHeaderCell = new List<String>();
             
-            dgv_actualise.RowCount =projet.Donnees.Count;
+            dgv.RowCount = projet.Donnees.Count;
 
-            for(int i=0;i<dgv_actualise.RowCount;i++)
+            for(int i=0;i<dgv.RowCount;i++)
             {
                 nomsHeaderCell.Add("Année "+i);
             }
@@ -71,6 +71,7 @@ namespace presentation
         /// <summary>
         /// Procédure permettant de créer un DataGridView
         /// </summary>
+
         /// <param name="nb"></param>
         /// <param name="name"></param>
         /// <param name="nom"></param>
@@ -80,7 +81,7 @@ namespace presentation
             //Commenter le code, ajouter les try/catch
             try
             {
-                if (name.Count == 5)
+                if (column.Count == 5)
                 {
                     dgv_actualise.RowHeadersWidth += 160;
                     dgv_actualise.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -102,7 +103,7 @@ namespace presentation
                 {
                     dgv.RowHeadersWidth += 160;
                     dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-                    dgv.RowCount = name.Count; ;
+                    dgv.RowCount = name.Count;
                     dgv.ColumnCount = projet.Donnees.Count;
 
                     for (int i = 0; i < dgv.RowCount; i++)
@@ -152,8 +153,8 @@ namespace presentation
                             dgv.Rows[i].Cells[j].Value = donnees[i].Cf.ToString("00.00");
                             break;
                         ////Cellule correspondant à l'amortissement
-                        //case 3:
-                        //    dgv.Rows[i].Cells[j].Value = donnees[i].Cf.ToString("00.00");
+                        case 3:
+                            dgv.Rows[i].Cells[j].Value = donnees[i].Cf.ToString("00.00");
                             break;
                         //Cellule correspondant au charges annuelles
                         case 4:

@@ -29,8 +29,18 @@ namespace presentation
 
         private void affichageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FAffichage affichage = new FAffichage(projet);
-            affichage.ShowDialog();
+            try
+            {
+                if(projet != null)
+                {
+                    FAffichage affichage = new FAffichage(projet);
+                    affichage.ShowDialog();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -84,6 +84,7 @@ namespace presentation
                         Fsd.Show();
                     }
                     projet.Init(investissementP, investissementM, valeurResiduel, listDonnees);
+                    Close();
 
 
                 }
