@@ -179,7 +179,7 @@ namespace presentation
                             break;
                         //Celllule correspondant au CashFlow
                         case 9:
-                            dgv.Rows[i].Cells[j].Value = projet.amortissement() - donnees[i].caAvtIS() - donnees[i].mtIS();
+                            dgv.Rows[i].Cells[j].Value = projet.cashFlow(i).ToString("00.00");
                             break;
                         default:
                             break;
@@ -205,7 +205,7 @@ namespace presentation
                     {
                         //Cellule correspondant à l'origine
                         case 0:
-                            dgv.Rows[i].Cells[j].Value = donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf); ;
+                            dgv.Rows[i].Cells[j].Value = projet.cashFlow(i);
                             break;
                         //Cellule correspondant au taux d'actualisation
                         case 1:
@@ -213,7 +213,7 @@ namespace presentation
                             break;
                         //Cellule correspondant à la valeur actualisé
                         case 2:
-                            dgv.Rows[i].Cells[j].Value = (donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf)) * donnees[i].Tx;
+                            dgv.Rows[i].Cells[j].Value = projet.cashFlowActu(i);
                             break;
                         default:
                             break;

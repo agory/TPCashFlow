@@ -92,7 +92,7 @@ namespace metier
 
         public Double mtIS()
         {
-            return (Ca - Cv + Cf)/3;
+            return (Ca - (Cv + Cf))/3;
         }
         #endregion
     }

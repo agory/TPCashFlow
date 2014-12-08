@@ -81,7 +81,17 @@ namespace metier
 
         public Double amortissement()
         {
-            return (investissementM - valeurResiduelle) / donnees.Count;
+            return (investissementM + investissementP - valeurResiduelle) / donnees.Count;
+        }
+
+        public Double cashFlow(int i)
+        {
+            return amortissement() + donnees[i].caAvtIS() - donnees[i].mtIS();
+        }
+
+        public Double cashFlowActu(int i)
+        {
+            return Math.Pow((1 + donnees[i].Tx), (-i)) * cashFlow(i);
         }
         #endregion
     }
