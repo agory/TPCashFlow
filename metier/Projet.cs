@@ -91,7 +91,7 @@ namespace metier
 
         public Double cashFlowActu(int i)
         {
-            return Math.Pow((1 + donnees[i].Tx), (-i)) * cashFlow(i);
+            return Math.Pow((1 + (donnees[i].Tx/100)), (-i)) * cashFlow(i);
         }
         #endregion
     }

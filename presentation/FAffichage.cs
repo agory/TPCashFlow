@@ -194,7 +194,8 @@ namespace presentation
             foreach(Donnees donnee in projet.Donnees){
                 donnees.Add(donnee);
             }
-
+            List<Double> cashFlowActus = new List<Double>();
+            Double temp = 0;
             //Boucle permettant de parcourir les lignes du tableau
             for (int i = 0; i < dgv.RowCount; i++)
             {
@@ -205,22 +206,44 @@ namespace presentation
                     {
                         //Cellule correspondant à l'origine
                         case 0:
-                            dgv.Rows[i].Cells[j].Value = projet.cashFlow(i);
+                            dgv.Rows[i].Cells[j].Value = projet.cashFlow(i).ToString("00.00");
                             break;
                         //Cellule correspondant au taux d'actualisation
                         case 1:
-                            dgv.Rows[i].Cells[j].Value = donnees[i].Tx;
+                            dgv.Rows[i].Cells[j].Value = donnees[i].Tx.ToString("00.00");
                             break;
                         //Cellule correspondant à la valeur actualisé
                         case 2:
-                            dgv.Rows[i].Cells[j].Value = projet.cashFlowActu(i);
+                            dgv.Rows[i].Cells[j].Value = projet.cashFlowActu(i).ToString("00.00");
                             break;
-                        default:
+                        case 3:
+                            break;
+                        //Cellule correspondant à la VAN
+                        case 4:
+                            cashFlowActus.Add(projet.cashFlowActu(i));
+                            if (i == dgv.RowCount - 1)
+                            {
+                                foreach (Double cashFlowActu in cashFlowActus)
+                                {
+                                    temp += cashFlowActu;
+                                }
+                                temp -= projet.InvestissementM - projet.InvestissementP;
+                                dgv.Rows[i].Cells[j].Value = temp.ToString("00.00");
+                            }
                             break;
                     }
-                    
                 }
             }
+            RemplirConclusion(temp);
+        }
+
+        public void RemplirConclusion(Double VAN)
+        {
+            lbl_van.Text += VAN.ToString("00.00") + '€';
+            if (VAN < 0)
+                lbl_conclusion.Text += "Votre projet n'est pas rentable";
+            else
+                lbl_conclusion.Text += "Votre projet est rentable. Faisons affaire ;)";
         }
 
     }
