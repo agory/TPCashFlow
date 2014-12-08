@@ -161,7 +161,7 @@ namespace presentation
 
                         //Cellule correspondant au chiffre d'affaires avant IS
                         case 5:
-                            dgv.Rows[i].Cells[j].Value = donnees[i].caAvtIS().ToString("00.00");
+                            dgv.Rows[i].Cells[j].Value = projet.caAvtIS(i).ToString("00.00");
                             break;
                         //Cellule correspondant au montant IS
                         case 6:
@@ -202,6 +202,7 @@ namespace presentation
                 //Boucle permettant de remplir les cellule d'une ligne du tableau
                 for (int j = 0; j < dgv.ColumnCount; j++)
                 {
+                    MessageBox.Show(i.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     switch (j)
                     {
                         //Cellule correspondant à l'origine
@@ -227,7 +228,7 @@ namespace presentation
                                 {
                                     temp += cashFlowActu;
                                 }
-                                temp -= projet.InvestissementM - projet.InvestissementP;
+                                temp -= projet.InvestissementM;
                                 dgv.Rows[i].Cells[j].Value = temp.ToString("00.00");
                             }
                             break;

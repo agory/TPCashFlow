@@ -79,19 +79,26 @@ namespace metier
             this.donnees.Add(donnee);
         }
 
+        public Double caAvtIS(int i)
+        {
+            return donnees[i].Ca - (donnees[i].Cv + donnees[i].Cf + amortissement());
+        }
+
         public Double amortissement()
         {
-            return (investissementM + investissementP - valeurResiduelle) / donnees.Count;
+            return (investissementM - valeurResiduelle) / donnees.Count;
         }
 
         public Double cashFlow(int i)
         {
-            return amortissement() + donnees[i].caAvtIS() - donnees[i].mtIS();
+            return caAvtIS(i) - donnees[i].mtIS() + amortissement();
+            //return InvestissementP - (amortissement() + caAvtIS(i) - donnees[i].mtIS());
         }
 
         public Double cashFlowActu(int i)
         {
-            return Math.Pow((1 + (donnees[i].Tx/100)), (-i)) * cashFlow(i);
+           
+            return Math.Pow((1 + donnees[i].Tx), (-(i+1) )) * 1000;
         }
         #endregion
     }
