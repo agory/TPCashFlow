@@ -241,9 +241,15 @@ namespace presentation
         {
             lbl_van.Text += VAN.ToString("00.00") + '€';
             if (VAN < 0)
+            {
                 lbl_conclusion.Text += "Votre projet n'est pas rentable";
+                lbl_conclusion.ForeColor = System.Drawing.Color.Red;
+            }
             else
-                lbl_conclusion.Text += "Votre projet est rentable. Faisons affaire ;)";
+            {
+                lbl_conclusion.Text += "Votre projet est rentable. Faisons affaire ;-)";
+                lbl_conclusion.ForeColor = System.Drawing.Color.Green;
+            }
         }
 
     }
